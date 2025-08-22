@@ -11,19 +11,15 @@ body {
   align-items: flex-start;
   box-sizing: border-box;
 }
-
-/* Titre */
 h1 {
-  margin: 2rem 0 1rem 0;
-  font-size: 2rem;
-  letter-spacing: 0.05em;
-  margin-left: 10rem;
-  padding-top: 2rem;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.03em;
 }
 
 .immat {
   color: #ffffff;
-  background: #18181800;
+  background: #00000000;
   border-radius: 7px;
   padding: 0.18em 0.35em;
   margin-left: 1rem;
@@ -35,14 +31,14 @@ h1 {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .img-halo-container::before {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 40px;
+  bottom: 16px;
   transform: translateX(-50%);
   width: 500vw;         /* Avant : 52% ou 65vw */
   max-width: 550px;    /* Avant : 260px ou 340px */
@@ -116,26 +112,30 @@ h1 {
   padding: 0.36em 0.6em;
   border-right: 1px solid #333;
   border-left: 1px solid #333;
-  vertical-align: top;
+  vertical-align: middle;
+  text-align: center; /* ✅ Ajout essentiel */
 }
+
+
 .caracteristiques td:first-child {
   font-weight: 600;
-  text-align: right;
+  text-align: center;
   white-space: nowrap;
-  padding-right: 1em;
+  padding-right: 0;
   color: #ffffff;
   border-left: none;
 }
 .caracteristiques td:last-child {
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   border-right: none;
 }
 
-.boutons-fiche {
+.btn-wrapper {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  align-items: center;
   margin-top: 2.3rem;
 }
 
@@ -143,9 +143,10 @@ h1 {
   background: #035e49;
   color: #fff;
   border: none;
+  text-align:center;
   border-radius: 7px;
   padding: 0.8em 1.2em;
-  font-size: 1.06rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 3px 14px #222b;
@@ -154,19 +155,15 @@ h1 {
   cursor: pointer;
   letter-spacing: 0.02em;
   display: inline-block;
+  width: 50%;
 }
 
 .btn-fiche:hover,
 .btn-fiche:focus {
-  background: #049c7c; /* Un vert un peu plus clair pour le hover, optionnel */
+  background: #045846;
   color: #fff;
-  box-shadow: 0 8px 28px #035e49;
+  box-shadow: 0 4px 14px #035e49;
   text-decoration: none;
-}
-
-/* Pour le deuxième bouton, même style */
-.btn-brochure {
-  background: #035e49;
 }
 
 .btn-brochure:hover,
@@ -175,40 +172,18 @@ h1 {
   color: #fff;
 }
 
-@media (max-width: 600px) {
-  .boutons-fiche {
-    flex-direction: column;
-    gap: 0.9rem;
-    margin-top: 1.6rem;
-  }
-  .btn-fiche, .btn-brochure {
-    width: 98%;
-    text-align: center;
-    font-size: 1rem;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .boutons-fiche {
-    flex-direction: column;
-    gap: 0.9rem;
-    margin-top: 1.6rem;
-  }
-  .btn-fiche, .btn-brochure {
-    width: 98%;
-    text-align: center;
-    font-size: 1rem;
-  }
-}
-
-
 /* Responsive Mobile */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   body {
     padding: 0;
     margin: 0;
     width: 100vw;
+  }
+
+  .btn-wrapper {
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 1.6rem;
   }
   .fiche-avion {
     width: 100vw;
@@ -218,19 +193,11 @@ h1 {
     min-height: 100vh;
     box-shadow: none;
   }
-  h1 {
-    font-size: 1.3rem;
-    margin-top: 1rem;
-    margin-bottom: 0.7rem;
-    margin-left: 6rem;
-    padding-top: 1.5rem;
-  }
   .aircraft-img {
     width: 80vw;
     max-width: 100vw;
     margin: 0 auto 1.1rem auto;
     border-radius: 0;
-    margin-left: 1.3rem;
     margin-top: 3rem;
     opacity: 0;
     transform: translateY(-50px) scale(0.90);
@@ -240,7 +207,7 @@ h1 {
     width: 100vw;
     max-width: 300px;
     height: 20px;
-    bottom: 10px;
+    bottom: 25px;
     filter: blur(1.3px);
   }
   .caracteristiques {
